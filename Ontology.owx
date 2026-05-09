@@ -1,0 +1,826 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/smarthome/ontologies/2026/smarthome-iot"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/smarthome/ontologies/2026/smarthome-iot"
+     versionIRI="http://www.semanticweb.org/smarthome/ontologies/2026/smarthome-iot/1.0.0">
+    <Prefix name="" IRI="http://www.semanticweb.org/smarthome/ontologies/2026/smarthome-iot#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>An OWL 2 DL ontology modelling smart home spaces, IoT devices, sensed properties, device states, network activity and security classification.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>Smart Home / IoT Ontology</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#APICall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actuator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AndroidController"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AuthServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Balcony"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bathroom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bedroom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BinaryState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CO2Level"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CO2Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Controller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EncryptedTraffic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ErrorState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Garage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Garden"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HVACDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HomeGateway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Humidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumiditySensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Illuminance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndoorSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kitchen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightingDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LivingRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LockState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Locked"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitoredSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MotionPresence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MotionSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetworkTraffic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObservableProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OffState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutdoorSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecureDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecureSmartRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecurityDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartAppliance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartLock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmokeDetector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Space"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnencryptedTraffic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Unlocked"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VulnerableDevice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#communicatesWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#containsDevice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#controls"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#generatesTraffic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAPICall"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUniqueHardwareID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#invokesAPI"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAuthorizedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isConnectedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#managedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#measures"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDeviceName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFirmwareVersion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIPAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTimestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isEncrypted"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#API_Override"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AndroidApp1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AuthServer1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kitchen1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LivingRoom1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MainLight_K1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MotionSensor_LR1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmartLock_FrontDoor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#State_LOCKED_Instance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#State_OFF_Instance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#State_ON_Instance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TempSensor_K1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Traffic_01"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="xsd:float"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="xsd:string"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="xsd:boolean"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#MonitoredSpace"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Space"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#containsDevice"/>
+                <Class IRI="#MotionSensor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SecureDevice"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Device"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isAuthorizedBy"/>
+                <Class IRI="#AuthServer"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#generatesTraffic"/>
+                <Class IRI="#EncryptedTraffic"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SecureSmartRoom"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SmartRoom"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#containsDevice"/>
+                <ObjectComplementOf>
+                    <Class IRI="#VulnerableDevice"/>
+                </ObjectComplementOf>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#containsDevice"/>
+                <Class IRI="#Device"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SmartRoom"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Space"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#containsDevice"/>
+                <Class IRI="#Actuator"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#containsDevice"/>
+                <Class IRI="#Sensor"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VulnerableDevice"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Device"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#generatesTraffic"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#NetworkTraffic"/>
+                    <ObjectMinCardinality cardinality="5">
+                        <ObjectProperty IRI="#hasAPICall"/>
+                        <Class IRI="#APICall"/>
+                    </ObjectMinCardinality>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Actuator"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndroidController"/>
+        <Class IRI="#Controller"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Balcony"/>
+        <Class IRI="#OutdoorSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bathroom"/>
+        <Class IRI="#IndoorSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bedroom"/>
+        <Class IRI="#IndoorSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BinaryState"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CO2Level"/>
+        <Class IRI="#ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CO2Sensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CO2Sensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#CO2Level"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Controller"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EncryptedTraffic"/>
+        <Class IRI="#NetworkTraffic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ErrorState"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Garage"/>
+        <Class IRI="#IndoorSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Garden"/>
+        <Class IRI="#OutdoorSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HVACDevice"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HomeGateway"/>
+        <Class IRI="#Controller"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humidity"/>
+        <Class IRI="#ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumiditySensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumiditySensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#Humidity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Illuminance"/>
+        <Class IRI="#ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndoorSpace"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Kitchen"/>
+        <Class IRI="#IndoorSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#Illuminance"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightingDevice"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LivingRoom"/>
+        <Class IRI="#IndoorSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LockState"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Locked"/>
+        <Class IRI="#LockState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MotionPresence"/>
+        <Class IRI="#ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MotionSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MotionSensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#MotionPresence"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OffState"/>
+        <Class IRI="#BinaryState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnState"/>
+        <Class IRI="#BinaryState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutdoorSpace"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecurityDevice"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartAppliance"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartLock"/>
+        <Class IRI="#SecurityDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeDetector"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#Temperature"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnencryptedTraffic"/>
+        <Class IRI="#NetworkTraffic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Unlocked"/>
+        <Class IRI="#LockState"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Actuator"/>
+        <Class IRI="#Controller"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Actuator"/>
+        <Class IRI="#Sensor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BinaryState"/>
+        <Class IRI="#LockState"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Controller"/>
+        <Class IRI="#Sensor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EncryptedTraffic"/>
+        <Class IRI="#UnencryptedTraffic"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IndoorSpace"/>
+        <Class IRI="#OutdoorSpace"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Locked"/>
+        <Class IRI="#Unlocked"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OffState"/>
+        <Class IRI="#OnState"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#APICall"/>
+        <NamedIndividual IRI="#API_Override"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AndroidController"/>
+        <NamedIndividual IRI="#AndroidApp1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AuthServer"/>
+        <NamedIndividual IRI="#AuthServer1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Kitchen"/>
+        <NamedIndividual IRI="#Kitchen1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LivingRoom"/>
+        <NamedIndividual IRI="#LivingRoom1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LightingDevice"/>
+        <NamedIndividual IRI="#MainLight_K1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MotionSensor"/>
+        <NamedIndividual IRI="#MotionSensor_LR1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SmartLock"/>
+        <NamedIndividual IRI="#SmartLock_FrontDoor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Locked"/>
+        <NamedIndividual IRI="#State_LOCKED_Instance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OffState"/>
+        <NamedIndividual IRI="#State_OFF_Instance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OnState"/>
+        <NamedIndividual IRI="#State_ON_Instance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TemperatureSensor"/>
+        <NamedIndividual IRI="#TempSensor_K1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UnencryptedTraffic"/>
+        <NamedIndividual IRI="#Traffic_01"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#generatesTraffic"/>
+        <NamedIndividual IRI="#AndroidApp1"/>
+        <NamedIndividual IRI="#Traffic_01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#MainLight_K1"/>
+        <NamedIndividual IRI="#State_OFF_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <NamedIndividual IRI="#MainLight_K1"/>
+        <NamedIndividual IRI="#Kitchen1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#managedBy"/>
+        <NamedIndividual IRI="#MainLight_K1"/>
+        <NamedIndividual IRI="#AndroidApp1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <NamedIndividual IRI="#MotionSensor_LR1"/>
+        <NamedIndividual IRI="#LivingRoom1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#SmartLock_FrontDoor"/>
+        <NamedIndividual IRI="#State_LOCKED_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <NamedIndividual IRI="#SmartLock_FrontDoor"/>
+        <NamedIndividual IRI="#LivingRoom1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isAuthorizedBy"/>
+        <NamedIndividual IRI="#TempSensor_K1"/>
+        <NamedIndividual IRI="#AuthServer1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <NamedIndividual IRI="#TempSensor_K1"/>
+        <NamedIndividual IRI="#Kitchen1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAPICall"/>
+        <NamedIndividual IRI="#Traffic_01"/>
+        <NamedIndividual IRI="#API_Override"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasIPAddress"/>
+        <NamedIndividual IRI="#AndroidApp1"/>
+        <Literal datatypeIRI="xsd:string">192.168.1.42</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDeviceName"/>
+        <NamedIndividual IRI="#MainLight_K1"/>
+        <Literal datatypeIRI="xsd:string">Kitchen Main Light</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirmwareVersion"/>
+        <NamedIndividual IRI="#TempSensor_K1"/>
+        <Literal datatypeIRI="xsd:string">2.1.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasValue"/>
+        <NamedIndividual IRI="#TempSensor_K1"/>
+        <Literal datatypeIRI="xsd:float">24.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isEncrypted"/>
+        <NamedIndividual IRI="#Traffic_01"/>
+        <Literal datatypeIRI="xsd:boolean">false</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#containsDevice"/>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasState"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasUniqueHardwareID"/>
+    </InverseFunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#communicatesWith"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isConnectedTo"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasPart"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#containsDevice"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#controls"/>
+        <Class IRI="#Actuator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#generatesTraffic"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAPICall"/>
+        <Class IRI="#NetworkTraffic"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#invokesAPI"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAuthorizedBy"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#managedBy"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#measures"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#containsDevice"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#controls"/>
+        <Class IRI="#ObservableProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#generatesTraffic"/>
+        <Class IRI="#NetworkTraffic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAPICall"/>
+        <Class IRI="#APICall"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#invokesAPI"/>
+        <Class IRI="#APICall"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAuthorizedBy"/>
+        <Class IRI="#AuthServer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#managedBy"/>
+        <Class IRI="#Controller"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#measures"/>
+        <Class IRI="#ObservableProperty"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#generatesTraffic"/>
+            <ObjectProperty IRI="#hasAPICall"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#invokesAPI"/>
+    </SubObjectPropertyOf>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDeviceName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFirmwareVersion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasIPAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTimestamp"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasValue"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isEncrypted"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
