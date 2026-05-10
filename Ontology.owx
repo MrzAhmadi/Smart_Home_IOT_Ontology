@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/smarthome/ontologies/2026/smarthome-iot"
-     versionIRI="http://www.semanticweb.org/smarthome/ontologies/2026/smarthome-iot/1.0.0">
+     versionIRI="http://www.semanticweb.org/smarthome/ontologies/2026/smarthome-iot/2.0.0">
     <Prefix name="" IRI="http://www.semanticweb.org/smarthome/ontologies/2026/smarthome-iot#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -15,7 +15,7 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal>An OWL 2 DL ontology modelling smart home spaces, IoT devices, sensed properties, device states, network activity and security classification.</Literal>
+        <Literal>An OWL 2 DL ontology modelling smart home spaces, IoT devices, sensed properties, device states, network activity, automation rules, energy monitoring, alerts, and security classification.</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -28,10 +28,19 @@
         <Class IRI="#Actuator"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Administrator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alert"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#AndroidController"/>
     </Declaration>
     <Declaration>
         <Class IRI="#AuthServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AutomationRule"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Balcony"/>
@@ -61,7 +70,25 @@
         <Class IRI="#EncryptedTraffic"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#EnergyAlert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyConsumption"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyEfficientRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyReading"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ErrorState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventTriggeredRoutine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Floor"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Garage"/>
@@ -70,7 +97,16 @@
         <Class IRI="#Garden"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Guest"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HVACDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HardwareID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Home"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HomeGateway"/>
@@ -121,6 +157,12 @@
         <Class IRI="#ObservableProperty"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Occupant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccupiedRoom"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OffState"/>
     </Declaration>
     <Declaration>
@@ -130,10 +172,25 @@
         <Class IRI="#OutdoorSpace"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Routine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SafetyAlert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScheduledRoutine"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SecureDevice"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SecureSmartRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecurityAlert"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SecurityDevice"/>
@@ -152,6 +209,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SmokeDetector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmokeLevel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Space"/>
@@ -175,7 +235,13 @@
         <Class IRI="#VulnerableDevice"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#appliesTo"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#communicatesWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contains"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#containsDevice"/>
@@ -184,10 +250,19 @@
         <ObjectProperty IRI="#controls"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#generatesAlert"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#generatesTraffic"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasAPICall"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEnergyReading"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOccupant"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPart"/>
@@ -211,10 +286,28 @@
         <ObjectProperty IRI="#isLocatedIn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#managedBy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#measures"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#notifies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#residesIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sharesSpaceWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#triggeredBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAlertMessage"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasDeviceName"/>
@@ -223,10 +316,28 @@
         <DataProperty IRI="#hasFirmwareVersion"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasFloorNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasHomeAddress"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasIPAddress"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasPersonName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPowerWatts"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRuleDescription"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasTimestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUnit"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasValue"/>
@@ -238,10 +349,28 @@
         <NamedIndividual IRI="#API_Override"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Alert_Smoke_K1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#AndroidApp1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#AuthServer1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EnergyReading_HVAC_01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Floor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Guest_Bob"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HVAC_LR1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Home1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Kitchen1"/>
@@ -256,7 +385,19 @@
         <NamedIndividual IRI="#MotionSensor_LR1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Occupant_Alice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Routine_MorningWakeup"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rule_MotionLight"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#SmartLock_FrontDoor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmokeDetector_K1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#State_LOCKED_Instance"/>
@@ -274,14 +415,40 @@
         <NamedIndividual IRI="#Traffic_01"/>
     </Declaration>
     <Declaration>
-        <Datatype IRI="xsd:float"/>
-    </Declaration>
-    <Declaration>
         <Datatype IRI="xsd:string"/>
     </Declaration>
     <Declaration>
         <Datatype IRI="xsd:boolean"/>
     </Declaration>
+    <Declaration>
+        <Datatype IRI="xsd:integer"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="xsd:float"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="xsd:dateTime"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#EnergyEfficientRoom"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SmartRoom"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#containsDevice"/>
+                <Class IRI="#HVACDevice"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#containsDevice"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#Device"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasEnergyReading"/>
+                        <Class IRI="#EnergyReading"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#MonitoredSpace"/>
         <ObjectIntersectionOf>
@@ -289,6 +456,16 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#containsDevice"/>
                 <Class IRI="#MotionSensor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OccupiedRoom"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Space"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasOccupant"/>
+                <Class IRI="#Occupant"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -357,6 +534,10 @@
         <Class IRI="#Device"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Administrator"/>
+        <Class IRI="#Occupant"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#AndroidController"/>
         <Class IRI="#Controller"/>
     </SubClassOf>
@@ -400,8 +581,24 @@
         <Class IRI="#NetworkTraffic"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#EnergyAlert"/>
+        <Class IRI="#Alert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyConsumption"/>
+        <Class IRI="#ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ErrorState"/>
         <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventTriggeredRoutine"/>
+        <Class IRI="#Routine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Floor"/>
+        <Class IRI="#Home"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Garage"/>
@@ -410,6 +607,10 @@
     <SubClassOf>
         <Class IRI="#Garden"/>
         <Class IRI="#OutdoorSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Guest"/>
+        <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HVACDevice"/>
@@ -489,6 +690,10 @@
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Occupant"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#OffState"/>
         <Class IRI="#BinaryState"/>
     </SubClassOf>
@@ -499,6 +704,22 @@
     <SubClassOf>
         <Class IRI="#OutdoorSpace"/>
         <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Routine"/>
+        <Class IRI="#AutomationRule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SafetyAlert"/>
+        <Class IRI="#Alert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScheduledRoutine"/>
+        <Class IRI="#Routine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecurityAlert"/>
+        <Class IRI="#Alert"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SecurityDevice"/>
@@ -519,6 +740,21 @@
     <SubClassOf>
         <Class IRI="#SmokeDetector"/>
         <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeDetector"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measures"/>
+            <Class IRI="#SmokeLevel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeLevel"/>
+        <Class IRI="#ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Space"/>
+        <Class IRI="#Floor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Temperature"/>
@@ -556,12 +792,34 @@
         <Class IRI="#LockState"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#CO2Level"/>
+        <Class IRI="#EnergyConsumption"/>
+        <Class IRI="#Humidity"/>
+        <Class IRI="#Illuminance"/>
+        <Class IRI="#MotionPresence"/>
+        <Class IRI="#SmokeLevel"/>
+        <Class IRI="#Temperature"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Controller"/>
         <Class IRI="#Sensor"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#EncryptedTraffic"/>
         <Class IRI="#UnencryptedTraffic"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EnergyAlert"/>
+        <Class IRI="#SafetyAlert"/>
+        <Class IRI="#SecurityAlert"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EventTriggeredRoutine"/>
+        <Class IRI="#ScheduledRoutine"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Guest"/>
+        <Class IRI="#Occupant"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#IndoorSpace"/>
@@ -580,12 +838,36 @@
         <NamedIndividual IRI="#API_Override"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#SafetyAlert"/>
+        <NamedIndividual IRI="#Alert_Smoke_K1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#AndroidController"/>
         <NamedIndividual IRI="#AndroidApp1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#AuthServer"/>
         <NamedIndividual IRI="#AuthServer1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EnergyReading"/>
+        <NamedIndividual IRI="#EnergyReading_HVAC_01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Floor"/>
+        <NamedIndividual IRI="#Floor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Guest"/>
+        <NamedIndividual IRI="#Guest_Bob"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HVACDevice"/>
+        <NamedIndividual IRI="#HVAC_LR1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Home"/>
+        <NamedIndividual IRI="#Home1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Kitchen"/>
@@ -604,8 +886,24 @@
         <NamedIndividual IRI="#MotionSensor_LR1"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Occupant"/>
+        <NamedIndividual IRI="#Occupant_Alice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ScheduledRoutine"/>
+        <NamedIndividual IRI="#Routine_MorningWakeup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EventTriggeredRoutine"/>
+        <NamedIndividual IRI="#Rule_MotionLight"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#SmartLock"/>
         <NamedIndividual IRI="#SmartLock_FrontDoor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SmokeDetector"/>
+        <NamedIndividual IRI="#SmokeDetector_K1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Locked"/>
@@ -627,10 +925,65 @@
         <Class IRI="#UnencryptedTraffic"/>
         <NamedIndividual IRI="#Traffic_01"/>
     </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#API_Override"/>
+        <NamedIndividual IRI="#Alert_Smoke_K1"/>
+        <NamedIndividual IRI="#AndroidApp1"/>
+        <NamedIndividual IRI="#AuthServer1"/>
+        <NamedIndividual IRI="#EnergyReading_HVAC_01"/>
+        <NamedIndividual IRI="#Floor1"/>
+        <NamedIndividual IRI="#Guest_Bob"/>
+        <NamedIndividual IRI="#HVAC_LR1"/>
+        <NamedIndividual IRI="#Home1"/>
+        <NamedIndividual IRI="#Kitchen1"/>
+        <NamedIndividual IRI="#LivingRoom1"/>
+        <NamedIndividual IRI="#MainLight_K1"/>
+        <NamedIndividual IRI="#MotionSensor_LR1"/>
+        <NamedIndividual IRI="#Occupant_Alice"/>
+        <NamedIndividual IRI="#Routine_MorningWakeup"/>
+        <NamedIndividual IRI="#Rule_MotionLight"/>
+        <NamedIndividual IRI="#SmartLock_FrontDoor"/>
+        <NamedIndividual IRI="#SmokeDetector_K1"/>
+        <NamedIndividual IRI="#State_LOCKED_Instance"/>
+        <NamedIndividual IRI="#State_OFF_Instance"/>
+        <NamedIndividual IRI="#State_ON_Instance"/>
+        <NamedIndividual IRI="#TempSensor_K1"/>
+        <NamedIndividual IRI="#Traffic_01"/>
+    </DifferentIndividuals>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#generatesTraffic"/>
         <NamedIndividual IRI="#AndroidApp1"/>
         <NamedIndividual IRI="#Traffic_01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Floor1"/>
+        <NamedIndividual IRI="#Home1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEnergyReading"/>
+        <NamedIndividual IRI="#HVAC_LR1"/>
+        <NamedIndividual IRI="#EnergyReading_HVAC_01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <NamedIndividual IRI="#HVAC_LR1"/>
+        <NamedIndividual IRI="#LivingRoom1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Kitchen1"/>
+        <NamedIndividual IRI="#Floor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOccupant"/>
+        <NamedIndividual IRI="#LivingRoom1"/>
+        <NamedIndividual IRI="#Occupant_Alice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#LivingRoom1"/>
+        <NamedIndividual IRI="#Floor1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasState"/>
@@ -653,6 +1006,26 @@
         <NamedIndividual IRI="#LivingRoom1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#residesIn"/>
+        <NamedIndividual IRI="#Occupant_Alice"/>
+        <NamedIndividual IRI="#Home1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#appliesTo"/>
+        <NamedIndividual IRI="#Rule_MotionLight"/>
+        <NamedIndividual IRI="#MainLight_K1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#notifies"/>
+        <NamedIndividual IRI="#Rule_MotionLight"/>
+        <NamedIndividual IRI="#Occupant_Alice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#triggeredBy"/>
+        <NamedIndividual IRI="#Rule_MotionLight"/>
+        <NamedIndividual IRI="#MotionSensor_LR1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasState"/>
         <NamedIndividual IRI="#SmartLock_FrontDoor"/>
         <NamedIndividual IRI="#State_LOCKED_Instance"/>
@@ -661,6 +1034,16 @@
         <ObjectProperty IRI="#isLocatedIn"/>
         <NamedIndividual IRI="#SmartLock_FrontDoor"/>
         <NamedIndividual IRI="#LivingRoom1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#generatesAlert"/>
+        <NamedIndividual IRI="#SmokeDetector_K1"/>
+        <NamedIndividual IRI="#Alert_Smoke_K1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <NamedIndividual IRI="#SmokeDetector_K1"/>
+        <NamedIndividual IRI="#Kitchen1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isAuthorizedBy"/>
@@ -678,9 +1061,39 @@
         <NamedIndividual IRI="#API_Override"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#hasAlertMessage"/>
+        <NamedIndividual IRI="#Alert_Smoke_K1"/>
+        <Literal datatypeIRI="xsd:string">Smoke detected in Kitchen1 — check immediately</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#hasIPAddress"/>
         <NamedIndividual IRI="#AndroidApp1"/>
         <Literal datatypeIRI="xsd:string">192.168.1.42</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPowerWatts"/>
+        <NamedIndividual IRI="#EnergyReading_HVAC_01"/>
+        <Literal datatypeIRI="xsd:float">1450.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTimestamp"/>
+        <NamedIndividual IRI="#EnergyReading_HVAC_01"/>
+        <Literal datatypeIRI="xsd:dateTime">2026-05-10T08:30:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasUnit"/>
+        <NamedIndividual IRI="#EnergyReading_HVAC_01"/>
+        <Literal datatypeIRI="xsd:string">W</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFloorNumber"/>
+        <NamedIndividual IRI="#Floor1"/>
+        <Literal datatypeIRI="xsd:integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasHomeAddress"/>
+        <NamedIndividual IRI="#Home1"/>
+        <Literal datatypeIRI="xsd:string">Via Roma 12, Milano, Italy</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasDeviceName"/>
@@ -688,9 +1101,24 @@
         <Literal datatypeIRI="xsd:string">Kitchen Main Light</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#hasPersonName"/>
+        <NamedIndividual IRI="#Occupant_Alice"/>
+        <Literal datatypeIRI="xsd:string">Alice</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasRuleDescription"/>
+        <NamedIndividual IRI="#Rule_MotionLight"/>
+        <Literal datatypeIRI="xsd:string">When motion detected in LivingRoom, turn on MainLight in Kitchen</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#hasFirmwareVersion"/>
         <NamedIndividual IRI="#TempSensor_K1"/>
         <Literal datatypeIRI="xsd:string">2.1.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasUnit"/>
+        <NamedIndividual IRI="#TempSensor_K1"/>
+        <Literal datatypeIRI="xsd:string">°C</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasValue"/>
@@ -703,8 +1131,16 @@
         <Literal datatypeIRI="xsd:boolean">false</Literal>
     </DataPropertyAssertion>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#contains"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#containsDevice"/>
         <ObjectProperty IRI="#isLocatedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPart"/>
+        <ObjectProperty IRI="#isPartOf"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasState"/>
@@ -721,9 +1157,19 @@
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#isConnectedTo"/>
     </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#sharesSpaceWith"/>
+    </SymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasPart"/>
     </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isPartOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#appliesTo"/>
+        <Class IRI="#AutomationRule"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#containsDevice"/>
         <Class IRI="#Space"/>
@@ -731,6 +1177,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#controls"/>
         <Class IRI="#Actuator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#generatesAlert"/>
+        <Class IRI="#Sensor"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#generatesTraffic"/>
@@ -741,11 +1191,31 @@
         <Class IRI="#NetworkTraffic"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEnergyReading"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOccupant"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUniqueHardwareID"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#invokesAPI"/>
         <Class IRI="#Device"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAuthorizedBy"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLocatedIn"/>
         <Class IRI="#Device"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -756,6 +1226,26 @@
         <ObjectProperty IRI="#measures"/>
         <Class IRI="#Sensor"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#notifies"/>
+        <Class IRI="#AutomationRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#residesIn"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#sharesSpaceWith"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#triggeredBy"/>
+        <Class IRI="#AutomationRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#appliesTo"/>
+        <Class IRI="#Actuator"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#containsDevice"/>
         <Class IRI="#Device"/>
@@ -763,6 +1253,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#controls"/>
         <Class IRI="#ObservableProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#generatesAlert"/>
+        <Class IRI="#Alert"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#generatesTraffic"/>
@@ -773,12 +1267,32 @@
         <Class IRI="#APICall"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEnergyReading"/>
+        <Class IRI="#EnergyReading"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOccupant"/>
+        <Class IRI="#Occupant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUniqueHardwareID"/>
+        <Class IRI="#HardwareID"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#invokesAPI"/>
         <Class IRI="#APICall"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isAuthorizedBy"/>
         <Class IRI="#AuthServer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <Class IRI="#Space"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#managedBy"/>
@@ -788,6 +1302,22 @@
         <ObjectProperty IRI="#measures"/>
         <Class IRI="#ObservableProperty"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#notifies"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#residesIn"/>
+        <Class IRI="#Home"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#sharesSpaceWith"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#triggeredBy"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyRange>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
             <ObjectProperty IRI="#generatesTraffic"/>
@@ -795,6 +1325,79 @@
         </ObjectPropertyChain>
         <ObjectProperty IRI="#invokesAPI"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#isLocatedIn"/>
+            <ObjectProperty IRI="#containsDevice"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#sharesSpaceWith"/>
+    </SubObjectPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAlertMessage"/>
+        <Class IRI="#Alert"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDeviceName"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFirmwareVersion"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFloorNumber"/>
+        <Class IRI="#Floor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasHomeAddress"/>
+        <Class IRI="#Home"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasIPAddress"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPersonName"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPowerWatts"/>
+        <Class IRI="#EnergyReading"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRuleDescription"/>
+        <Class IRI="#AutomationRule"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTimestamp"/>
+        <ObjectUnionOf>
+            <Class IRI="#Alert"/>
+            <Class IRI="#EnergyReading"/>
+            <Class IRI="#NetworkTraffic"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUnit"/>
+        <ObjectUnionOf>
+            <Class IRI="#EnergyReading"/>
+            <Class IRI="#Sensor"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasValue"/>
+        <ObjectUnionOf>
+            <Class IRI="#EnergyReading"/>
+            <Class IRI="#Sensor"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isEncrypted"/>
+        <Class IRI="#NetworkTraffic"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAlertMessage"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasDeviceName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -804,12 +1407,36 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#hasFloorNumber"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasHomeAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#hasIPAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPersonName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPowerWatts"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRuleDescription"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasTimestamp"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUnit"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasValue"/>
@@ -824,3 +1451,4 @@
 
 
 <!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
